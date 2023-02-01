@@ -6,22 +6,24 @@ public class Entry{
     public string _date;
     public string _prompt;
     public string _response;
-    // private List<string> _data = new List<string>();
+    
+    public List<string> _data = new List<string>();
+
+    Prompts prompt = new Prompts();
  // member variable for each key part
     public Entry()
     {
     }
     public void Write(){
         // _date = DateTime.Today;
-        _date = DateTime.Now.ToString();
+        
         // Console.WriteLine(_date);
         
-        Prompts prompt = new Prompts();
+        _date = DateTime.Now.ToString();
         _prompt = prompt.RandomPrompt();
         // string displayPrompt = prompt.Display();
         // Console.WriteLine(displayPrompt);
-        // Console.Write(_prompt);
-
+        Console.Write(_prompt);
         _response = Console.ReadLine();
 
         // _data.Add(_date);

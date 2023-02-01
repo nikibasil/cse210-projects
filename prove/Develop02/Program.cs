@@ -11,7 +11,8 @@ class Program
         Console.WriteLine("Welcome to the Journal Program!");
 
         int pick = -1;
-
+        Journal journal1 = new Journal();
+        Entry entry1 = new Entry();
         // StreamReader _fileName = new StreamReader();
         // public string filename = "myfile.txt";
         // StreamReader reader = new StreamReader(filename) 
@@ -27,28 +28,22 @@ class Program
             Console.WriteLine("What would you like to do? ");
             pick = int.Parse(Console.ReadLine());
 
-            Journal journal1 = new Journal();
-
-            Entry entry1 = new Entry();
 
             if (pick == 1){
-                Console.WriteLine("1");
                 journal1.AddEntry();                
             }
             else if (pick  == 2){
-                Console.WriteLine("2");
                 journal1.DisplayFile();
             }
             else if (pick  == 3){
-                Console.WriteLine("You picked 3");
                 // /journal1.LoadFile(StreamReader _);
-                journal1.LoadFile();
+                journal1.Load();
                 // string[] lines =  System.IO.File.ReadAllLines;
             }
             else if (pick  == 4){
                 Console.WriteLine("What is your filename?" );
                 // journal1.filename = Console.ReadLine();
-                journal1.ProcessFiles();
+                journal1.Save();
                 // File.savetofile(Entry.entry1._date,entry1._prompt, entry1._response);
                           
                 // Console.WriteLine("What is the filename? ");
