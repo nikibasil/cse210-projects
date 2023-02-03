@@ -33,7 +33,6 @@ public class Journal
 
     public void DisplayFile()
     {
-        Console.WriteLine(_entryList.Count);
         // calls display menthod from entry class
         foreach (Entry entry in _entryList)
         {
@@ -47,16 +46,16 @@ public class Journal
     }
 
 
-// string filename = "myFile.txt";
-// string[] lines = System.IO.File.ReadAllLines(filename);
+    // string filename = "myFile.txt";
+    // string[] lines = System.IO.File.ReadAllLines(filename);
 
-// foreach (string line in lines)
-// {
-//     string[] parts = line.Split(",");
+    // foreach (string line in lines)
+    // {
+    //     string[] parts = line.Split(",");
 
-//     string firstName = parts[0];
-//     string lastName = parts[1];
-// }
+    //     string firstName = parts[0];
+    //     string lastName = parts[1];
+    // }
 
     // public void Load()
     // {
@@ -75,22 +74,22 @@ public class Journal
     {
 
         Console.WriteLine("What is the file name? ");
-
         _fileName = Console.ReadLine();
 
         string[] lines = System.IO.File.ReadAllLines(_fileName);
+        _entryList.Clear();
 
-        foreach (string line in lines)
-
+        for (int x = 0; x < lines.Count(); x += 3)
         {
-
-            Console.WriteLine(line);
-
+            Entry entry = new Entry();
+            entry._date = lines[x];
+            entry._prompt = lines[x+1];
+            entry._response = lines[x+2];
+            _entryList.Add(entry);
         }
-
     }
 
-// miguels save
+    // miguels save
 
     public void Save()
 
@@ -105,69 +104,67 @@ public class Journal
             foreach (Entry _entry in _entryList)
 
             {
-
-                outputFile.WriteLine($"Date: {_entry._date} - Prompt: {_entry._prompt} \n{_entry._response}\n");
-
+                outputFile.WriteLine($"Date: {_entry._date}\nPrompt: {_entry._prompt}\nEntry: {_entry._response}");
             }
 
     }
 }
-    // Console.WriteLine("assessing load file method");
+// Console.WriteLine("assessing load file method");
 
-    // // LOAD THE FILE
-    // public void LoadFile(string _fileName)
-    // {
-    //     Console.WriteLine("assessing load file method");
-    //     String line;
-    //     try
-    //     {
-    //         // StreamReader.Read method reads the next character or next set of 
-    //         //     characters from the input stream. 
-    //         //Pass the file path and file name to the StreamReader constructor
-    //         using (StreamReader sr = new StreamReader(_fileName))
-    //         {
-    //             line = sr.ReadLine();
-    //             while (line != null)
-    //             {
+// // LOAD THE FILE
+// public void LoadFile(string _fileName)
+// {
+//     Console.WriteLine("assessing load file method");
+//     String line;
+//     try
+//     {
+//         // StreamReader.Read method reads the next character or next set of 
+//         //     characters from the input stream. 
+//         //Pass the file path and file name to the StreamReader constructor
+//         using (StreamReader sr = new StreamReader(_fileName))
+//         {
+//             line = sr.ReadLine();
+//             while (line != null)
+//             {
 
-    //                 /// Brother Carter says Instead of Console.WriteLine below, 
-    //                 /// create your Entry class here and populate it with the 
-    //                 // contents of 'line'.
-    //                 //  Console.WriteLine(line);
-
-
+//                 /// Brother Carter says Instead of Console.WriteLine below, 
+//                 /// create your Entry class here and populate it with the 
+//                 // contents of 'line'.
+//                 //  Console.WriteLine(line);
 
 
 
-    //                 //  /Read the next line
-    //                 line = sr.ReadLine();
-    //             }
-
-    //         }
-    //         //Read the first line of text
-
-    //         // line = sr.ReadLine();
-    //         //Continue to read until you reach end of file
-
-    //         _entryList.Clear();
-    //         // for x in range 1-3
-    //         // 
-    //         Entry loadEntry = new Entry();
 
 
-    //         //close the file
-    //         sr.Close();
-    //         Console.ReadLine();
-    //     }
-    //     catch (Exception e)
-    //     {
-    //         Console.WriteLine("Exception: " + e.Message);
-    //     }
-    //     finally
-    //     {
-    //         Console.WriteLine("Executing finally block.");
-    //     }
-    // }
+//                 //  /Read the next line
+//                 line = sr.ReadLine();
+//             }
+
+//         }
+//         //Read the first line of text
+
+//         // line = sr.ReadLine();
+//         //Continue to read until you reach end of file
+
+//         _entryList.Clear();
+//         // for x in range 1-3
+//         // 
+//         Entry loadEntry = new Entry();
+
+
+//         //close the file
+//         sr.Close();
+//         Console.ReadLine();
+//     }
+//     catch (Exception e)
+//     {
+//         Console.WriteLine("Exception: " + e.Message);
+//     }
+//     finally
+//     {
+//         Console.WriteLine("Executing finally block.");
+//     }
+// }
 
 
 

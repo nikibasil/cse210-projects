@@ -28,7 +28,6 @@ class Program
             Console.WriteLine("What would you like to do? ");
             pick = int.Parse(Console.ReadLine());
 
-
             if (pick == 1){
                 journal1.AddEntry();                
             }
@@ -36,22 +35,15 @@ class Program
                 journal1.DisplayFile();
             }
             else if (pick  == 3){
-                // /journal1.LoadFile(StreamReader _);
+                
                 journal1.Load();
-                // string[] lines =  System.IO.File.ReadAllLines;
+                
             }
             else if (pick  == 4){
-                Console.WriteLine("What is your filename?" );
-                // journal1.filename = Console.ReadLine();
+                // Console.WriteLine("What is your filename?" );
                 journal1.Save();
-                // File.savetofile(Entry.entry1._date,entry1._prompt, entry1._response);
-                          
-                // Console.WriteLine("What is the filename? ");
-                // journal.fileName = Console.ReadLine();
-                // journal.SaveFile();
-                // journal1.proecessfile
-                }
-            
+            }
+                   
             else if (pick  == 5){
                 Console.WriteLine("Goodbye!");
             }
@@ -60,23 +52,7 @@ class Program
                 Console.WriteLine("anything else");
             }
         }
-
-        // Console.WriteLine("Please select one of the following choices");
-        
-        // used to get a prompt (string promptString = prompt.Get();)
-        // public string.getPrompt 
-        
-        // string displayedPrompt = prompt.DisplayPrompt();
-        
-    
-
-        // Journal newJournal = new Journal();
-        // newJournal.Menu()
-
-        
+             
     }
 
-    
-        
-    
 }

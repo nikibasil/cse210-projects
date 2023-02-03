@@ -7,6 +7,9 @@ class Program
         
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices");
+
+        Prompts prompt = new Prompts();
+        string displayedPrompt = prompt.DisplayPrompt();
         
         // Job job1 = new Job();
         // job1._jobTitle = "Software Engineer";

@@ -35,15 +35,11 @@ public class Entry{
     //     // return _data; 
     // }
     public void Display() {
-        // Console.Write("Date: ");
-        // Console.WriteLine(_date,_prompt,_response);
-        // Console.WriteLine(_data);
-        Console.WriteLine($"I got to entry display:");
-        Console.Write($"Date: ");
+
         Console.WriteLine(_date);
         Console.Write(_prompt);
         Console.Write(_response);
-        // Console.WriteLine(_data);
+
     }
 
 }
