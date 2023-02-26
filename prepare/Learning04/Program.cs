@@ -15,7 +15,7 @@ class Program
 
         WritingAssignment assign3 = new WritingAssignment("Mary Waters","European History", "The Causes of World War II");
         Console.WriteLine(assign3.GetSummary());
-        Console.WriteLine(assign3.GetWritingInfo());
+        Console.WriteLine(assign3.GetWritingInfo());   
 
         // Book book1 = new Book();
         // book1.SetAuthor("Smith");
