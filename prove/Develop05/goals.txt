@@ -1,0 +1,5 @@
+0
+Checklist | checklist goal 2 | checklist goal2 descrip | 20 | True | 0 | 0 | 0
+Simple | simple goal 2 | simple gaol 2 descrip | 20 | False
+Checklist | checklist goal3 | checklist goal 3 descrip | 30 | False | 0 | 0 | 0
+Eternal | etrnal goal 2 | eternal goal 2 descrip | 20
