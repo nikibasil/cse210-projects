@@ -20,7 +20,10 @@ public class EternalGoal : Goal
         throw new NotImplementedException();
     }
 
-
+    public override string SaveGoal()
+    {
+        return ($"{GetType()} | {GetName()} | {GetDescription()} | {GetPoints()}");
+    }
 
     // Methods
     public override int RecordGoal() 

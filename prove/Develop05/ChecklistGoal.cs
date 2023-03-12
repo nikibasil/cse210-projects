@@ -6,18 +6,21 @@ public class ChecklistGoal : Goal
 
     protected int _bonusTimes;
     protected int _bonusPoints;
-    protected int _counter = 0;
+    protected int _counter;
 
     // Constructors
-
-//    public ChecklistGoal(string _goalName, string _goalDescription, int _pointsAwarded) : base (_goalName,_goalDescription, _pointsAwarded)
-//     {
-//     }
 
     public ChecklistGoal(string goalType, string _goalName, string _goalDescription, int _pointsAwarded, int bonusPoints, int timesForBonus) : base (goalType, _goalName, _goalDescription, _pointsAwarded)
     {
         _bonusPoints = bonusPoints;
         _bonusTimes = timesForBonus;
+    }
+
+    public ChecklistGoal(int bonusPoints, int counter, int timesForBonus)
+    {
+        _bonusPoints = bonusPoints;
+        _bonusTimes = timesForBonus;
+        _counter = counter;
     }
 
     public ChecklistGoal()
@@ -47,12 +50,31 @@ public class ChecklistGoal : Goal
         return _bonusTimes;
     }
 
-    
-
     public int GetBonusPoints()
     {
         return _bonusPoints;
     }
+    
+    public int GetCount()
+    {
+        return _counter;
+    }
+    // public override GetCount()
+    // {
+    //     return _counter;
+    // }
+
+    public override string SaveGoal()
+
+    {
+        
+        return($"{GetType()} | {GetName()} | {GetDescription()} | {GetPoints()} | {GetIsComplete()} | {GetBonusPoints()} | {GetCount()} | {GetBonusTimes()}");
+       
+    }
+    // public override string LoadGoal()
+    // {
+    //     return ($"Simple Goal:; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}; {GetTimes()}; {GetBonusPoints()}; {GetCount()}");
+    // }
 
     // public override int RecordGoal() 
     // {    
@@ -64,15 +86,7 @@ public class ChecklistGoal : Goal
     // { 
     //     return _number;
     // }  
-
-    // public override int GetNumber() 
-    // { 
-    //     return _number;
-    // }  
-    // public override int GetCounter() 
-    // { 
-    //     return _counter;
-    // }     
+    
     // public override int GetCount() 
     // { 
     //     return _counter;
@@ -97,6 +111,7 @@ public class ChecklistGoal : Goal
         }  
 
         int totalPoints = _bonusPoints * _completeTimesBonus;
+        Console.WriteLine(_counter);
         return totalPoints; 
         
 
@@ -105,9 +120,7 @@ public class ChecklistGoal : Goal
     public override void DisplayGoal() //child class method
     {  
         if(_isComplete == true) { 
-            // Console.WriteLine($"{_counter}");
-            // Console.WriteLine($"{GetBonusTimes()}");
-            // Console.WriteLine($"{_bonusTimes}");
+           
             Console.WriteLine($"[X] | {_goalName} | {_goalDescription} | -- Currently completed {_counter}/{GetBonusTimes()} ");
         }
         else 
@@ -120,4 +133,8 @@ public class ChecklistGoal : Goal
     {
         throw new NotImplementedException();
     }
+
+    
+
+    
 }

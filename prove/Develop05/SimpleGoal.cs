@@ -27,11 +27,12 @@ public class SimpleGoal : Goal
         _isComplete = true;
         return _pointsAwarded;
     }
-    // public override string GetName(string _name)
-    // {
-        
-    //     return _name;
-    // }
+
+    public override string SaveGoal()
+    {
+
+        return($"{GetType()} | {GetName()} | {GetDescription()} | {GetPoints()} | {GetIsComplete()}");
+    }
     
 
 }

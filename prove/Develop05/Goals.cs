@@ -3,13 +3,14 @@ using System;
 public abstract class Goal
 {
     // Attributes
+    // List<Goal> goalList = new List<Goal>();
     protected string _goalType;
     protected string _goalName;
     protected string _goalDescription;
     protected int _pointsAwarded;
     protected bool _isComplete;
-
-
+    public string _fileName;
+    protected int _totalPoints;
 
     // Constructors
     // Simple Goal Constructor
@@ -29,16 +30,7 @@ public abstract class Goal
         _goalDescription = goalDescription;
         // _isComplete = false;
     }
-    //Eternal goal constructor
-    // Checklist Goal Constructor
-    // public Goal(string goalType, string goalName, string goalDescription,int pointsAwarded)
-    // {
-    //     _goalType = goalType;
-    //     _goalName  = goalName;
-    //     _goalDescription = goalDescription;
-    //     _pointsAwarded = pointsAwarded;
-    //     // _isComplete = false;
-    // }
+    
     public Goal()
     {
         
@@ -66,48 +58,11 @@ public abstract class Goal
         }
     }
 
-    public abstract int RecordEvent();
-
-    // public virtual void RecordGoal()
-    // {
-    //      // temporary list stores incomplete goals
-    //     List<Goal> notComplete = new List<Goal>(); 
-
-    //     int x = 1;
-    //     foreach (Goal goal in goalList)
-    //         {
-    //             if (goal.IsComplete() == false)
-    //             {
-    //                 notComplete.Add(goal);
-    //                 Console.Write($"{x}) ");
-    //                 // ListGoals();
-    //                 goal.DisplayGoal();
-    //                 // DisplayGoal();
-    //                 x++;
-    //             }
-                
-    //         }
-    //         if (notComplete.Count() == 0)
-    //         {
-    //             Console.WriteLine("No incomplete goals");
-    //         }
-    //         else
-    //         {
-    //             Console.WriteLine("Select the goal you want to record");
-    //             int option = int.Parse(Console.ReadLine()); 
-    //             option -= 1;   
- 
-    //             _totalPoints += notComplete[option].RecordGoal(); 
-
-    //         } 
-
-        // int ask user for whiuch goal to check off
-        // create variable int value returned int value = intsance of goal nin list method.record goal
-        // increase total points by that vriable
-        // goalist x now in brackets brcaket might want to be a variable
-    // }
-
     
+    public abstract int RecordEvent();
+    public abstract string SaveGoal();
+
+       
     //Getters & Setters
     public string GetName()
     {
@@ -139,21 +94,5 @@ public abstract class Goal
     {  
         return _isComplete;
     }  
-
-    public virtual int GetNumber()
-    { 
-        return 0;
-    }
-    public virtual int GetCount() 
-    { 
-        return 0;
-    }
-    
-
-
-    // public GetStringRepresentation()
-    // {
-
-    // }
 
 }
