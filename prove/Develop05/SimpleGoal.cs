@@ -14,12 +14,6 @@ public class SimpleGoal : Goal
     {
     }
 
-    public override int RecordEvent()
-    {
-        throw new NotImplementedException();
-    }
-
-
     // Methods
 
     public override int RecordGoal() 

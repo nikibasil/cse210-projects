@@ -59,11 +59,7 @@ public class ChecklistGoal : Goal
     {
         return _counter;
     }
-    // public override GetCount()
-    // {
-    //     return _counter;
-    // }
-
+    
     public override string SaveGoal()
 
     {
@@ -71,27 +67,7 @@ public class ChecklistGoal : Goal
         return($"{GetType()} | {GetName()} | {GetDescription()} | {GetPoints()} | {GetIsComplete()} | {GetBonusPoints()} | {GetCount()} | {GetBonusTimes()}");
        
     }
-    // public override string LoadGoal()
-    // {
-    //     return ($"Simple Goal:; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}; {GetTimes()}; {GetBonusPoints()}; {GetCount()}");
-    // }
-
-    // public override int RecordGoal() 
-    // {    
-    //     _isComplete = true;
-    //     return _pointsAwarded;
-    // }
-
-    // public override int GetNumber() 
-    // { 
-    //     return _number;
-    // }  
     
-    // public override int GetCount() 
-    // { 
-    //     return _counter;
-    // }     
-
     public override int RecordGoal()
     {
         Console.WriteLine("How many times have you completed the goal? ");
@@ -128,13 +104,9 @@ public class ChecklistGoal : Goal
             Console.WriteLine($"[ ] | {_goalName} | {_goalDescription} | -- Currently completed {_counter}/{GetBonusTimes()} ");
         }
     }
+    // public override string LoadGoal()
+    // {
+    //     return ($"Simple Goal:; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}; {GetTimes()}; {GetBonusPoints()}; {GetCount()}");
+    // }
 
-    public override int RecordEvent()
-    {
-        throw new NotImplementedException();
-    }
-
-    
-
-    
 }
