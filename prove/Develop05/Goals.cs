@@ -56,6 +56,8 @@ public abstract class Goal
         { 
             Console.WriteLine($"[ ] | {_goalName} | {_goalDescription}");
         }
+
+        // Console.WriteLine($"You have {_totalPoints}!");
     }
 
     

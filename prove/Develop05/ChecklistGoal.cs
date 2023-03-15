@@ -87,10 +87,7 @@ public class ChecklistGoal : Goal
         }  
 
         int totalPoints = _bonusPoints * _completeTimesBonus;
-        Console.WriteLine(_counter);
         return totalPoints; 
-        
-
     }  
 
     public override void DisplayGoal() //child class method
@@ -103,10 +100,11 @@ public class ChecklistGoal : Goal
         { 
             Console.WriteLine($"[ ] | {_goalName} | {_goalDescription} | -- Currently completed {_counter}/{GetBonusTimes()} ");
         }
+
     }
     // public override string LoadGoal()
     // {
-    //     return ($"Simple Goal:; {GetName()}; {GetDescription()}; {GetPoints()}; {_status}; {GetTimes()}; {GetBonusPoints()}; {GetCount()}");
+    //     return ($"{GetType()} | {GetName()} | {GetDescription()} | {GetPoints()} | {GetIsComplete()} | {GetBonusPoints()} | {GetCount()} | {GetBonusTimes()}");
     // }
 
 }

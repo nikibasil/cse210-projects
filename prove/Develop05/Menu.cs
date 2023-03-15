@@ -10,7 +10,8 @@ public class Menu
     int _totalPoints = 0;
     public string _fileName;
     public int _goalType;
-    int _bonusCompleted;
+    // int _bonusCompleted;
+    int _pointsAwarded;
     protected bool _isComplete;
     protected int _counter;
 
@@ -19,14 +20,15 @@ public class Menu
         int pick = 0;
         while (pick != 6)
         {
-            Console.WriteLine("Menu Options:");
+            Console.WriteLine($"\nYou have {_totalPoints} Points.");
+            Console.WriteLine("\nMenu Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goal");
             Console.WriteLine("3. Save Goal");
             Console.WriteLine("4. Load Goals");
             Console.WriteLine("5. Record Events");
             Console.WriteLine("6. Quit");
-            Console.WriteLine("Select a choice from the menu: ");
+            Console.Write("Select a choice from the menu: ");
             pick = int.Parse(Console.ReadLine());
 
             if (pick == 1)
@@ -39,7 +41,9 @@ public class Menu
                 {
                     // ListGoals();
                     goalList[i].DisplayGoal();
+
                 }
+
             }
             else if (pick == 3)
             {
@@ -56,7 +60,7 @@ public class Menu
             {
 
                 RecordGoal();
-                Console.WriteLine(_counter);
+
             }
             else if (pick == 6)
             {
@@ -83,9 +87,9 @@ public class Menu
             {
                 notComplete.Add(goal);
                 Console.Write($"{x}) ");
-                // ListGoals();
+
                 goal.DisplayGoal();
-                // DisplayGoal();
+
                 x++;
             }
 
@@ -96,13 +100,14 @@ public class Menu
         }
         else
         {
-            Console.WriteLine("Select the goal you want to record");
+            Console.Write("\nSelect the goal you want to record: ");
             int option = int.Parse(Console.ReadLine());
             option -= 1;
 
             _totalPoints += notComplete[option].RecordGoal();
-            Console.WriteLine(_counter);
         }
+        // Console.WriteLine($"Congratulations!");
+        // Console.WriteLine($"You have earned {_pointsAwarded} Points.");
     }
 
     public void CreateNewGoal()
@@ -118,40 +123,26 @@ public class Menu
         Console.WriteLine("What type of Goal would you like to create? ");
         pick = int.Parse(Console.ReadLine());
         _goalType = pick;
-        Console.WriteLine(_goalType);
+        // Console.WriteLine(_goalType);
+        Console.WriteLine("What is the name of your goal?");
+        string name = Console.ReadLine();
+        Console.WriteLine("What is your description of your goal?");
+        string description = Console.ReadLine();
+        Console.WriteLine("How many Points associated with this goal?");
+        int points = int.Parse(Console.ReadLine());
 
         if (pick == 1)
         {
-
-            Console.WriteLine("What is the name of your goal?");
-            string name = Console.ReadLine();
-            Console.WriteLine("What is your description of your goal?");
-            string description = Console.ReadLine();
-            Console.WriteLine("How many Points associated with this goal?");
-            int points = int.Parse(Console.ReadLine());
             SimpleGoal simple = new SimpleGoal("Simple", name, description, points);
             goalList.Add(simple);
-
         }
         else if (pick == 2)
         {
-            Console.WriteLine("What is the name of your goal?");
-            string name = Console.ReadLine();
-            Console.WriteLine("What is your description of your goal?");
-            string description = Console.ReadLine();
-            Console.WriteLine("How many Points associated with this goal?");
-            int points = int.Parse(Console.ReadLine());
             EternalGoal eternal = new EternalGoal("Eternal", name, description, points);
             goalList.Add(eternal);
         }
         else if (pick == 3)
         {
-            Console.WriteLine("What is the name of your goal?");
-            string name = Console.ReadLine();
-            Console.WriteLine("What is your description of your goal?");
-            string description = Console.ReadLine();
-            Console.WriteLine("How many Points associated with this goal?");
-            int points = int.Parse(Console.ReadLine());
             Console.WriteLine("How many times does this goal need to be accomplished for bonus points?");
             int bonusTimes = int.Parse(Console.ReadLine());
             Console.WriteLine("What is the bonus for accomplishing it that many times?");
@@ -169,12 +160,12 @@ public class Menu
             // go back to menu
             Console.WriteLine("anything else");
         }
-       
+
     }
 
-      public void SaveGoals()
+    public void SaveGoals()
     {
-        Console.WriteLine("What is the file name? ");
+        Console.Write("What is the file name? ");
 
         _fileName = Console.ReadLine();
 
@@ -193,7 +184,6 @@ public class Menu
     {
         Console.WriteLine("What is the file name? ");
         _fileName = Console.ReadLine();
-        // string[] parts = System.IO.File.ReadAllLines(_fileName);
         string[] goals = System.IO.File.ReadAllLines(_fileName);
         goalList.Clear();
 
