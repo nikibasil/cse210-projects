@@ -10,7 +10,7 @@ public class Video
     //  { get; set; }
     public string _author;
     public int _commentCount;
-    protected List<Comment> _comments = new List<Comment>();
+    private List<Comment> _comments = new List<Comment>();
     
     
     
@@ -19,6 +19,7 @@ public class Video
 
         Comment comment = new Comment(commenterName,commenterText);
         _comments.Add(comment);
+        _commentCount = _comments.Count;
 
     }
 
@@ -30,20 +31,11 @@ public class Video
        
         foreach(Comment comment in _comments)
         {
-            // _commentCount = comment.Count();
-            // _commentCount = comment.Count(c => c == "");
-            
             Console.WriteLine($"{comment.GetCommentName()}: {comment.GetCommentText()} ");
         }
          
                
     }
-
-    // public int GetCommentsCount()
-    // {
-
-    // }
-
 }
 
 

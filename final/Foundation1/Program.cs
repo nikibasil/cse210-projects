@@ -3,12 +3,8 @@ using System;
 
 class Program
 {
-    
-
     static void Main(string[] args)
     {
-        int _commentsCount;
-        Video video1 = new Video();
         List<Video> videos = new List<Video>()
         {
             new Video(){ _title="Video One", _author="Bill Johnson", _seconds=120},
@@ -29,11 +25,6 @@ class Program
         videos[2].AddComments("sally", "comment3");
         videos[3].AddComments("lucy", "commenter4");
 
-        for(int i = 0; i < videos.Count; i++)
-        {
-
-            // Console.WriteLine(videos[i]._title + videos[i]._author + videos[i]._seconds);
-        }
 
         foreach (Video video in videos)
         {
