@@ -12,9 +12,13 @@ public class Events
     protected string _eventTime;
     protected string _eventType;
 
-    public Events()
+    public Events(string eventTitle, string eventDescription, string eventDate, string eventTime, string eventAddress )
     {
-
+        _eventTitle = eventTitle;
+        _eventDescription = eventDescription;
+        _eventDate = eventDate;
+        _eventTime = eventTime;
+        
     }
 
     // public Events()
