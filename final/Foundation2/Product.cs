@@ -7,9 +7,7 @@ public class Product{
     private string _productId;
     private double _price;
     private int _quantity;
-    // private double _productPrice;
-
-
+    
     public Product(string productName, string productId, double price, int quantity)
     {
         _productId = productId;
@@ -33,14 +31,5 @@ public class Product{
     {
         return ($"{_productId}: {_productName}");
     }
-
-
-
-
-
-
-
-
-
 
 }

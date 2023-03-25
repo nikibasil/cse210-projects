@@ -10,8 +10,6 @@ public class Order
     {
         _customer = customer;
     }
-
-
     public void GetPackingLabel()
     {
         Console.WriteLine("*** PACKING LABEL ***");
@@ -19,7 +17,7 @@ public class Order
         {
             Console.WriteLine(p.GetProductLabel());
         }
-        Console.WriteLine("***      END      ***");
+        Console.WriteLine("***               ***");
     }
 
     public void GetShippingLabel()
@@ -27,7 +25,7 @@ public class Order
         Console.WriteLine("*** SHIPPING LABEL ***");
         Console.WriteLine(_customer.GetName());
         Console.WriteLine(_customer.GetAddress().GetAddress());
-        Console.WriteLine("***      END       ***");
+        Console.WriteLine("***                ***");
     } 
 
     public void GetTotalPrice()
