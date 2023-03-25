@@ -26,12 +26,12 @@ public class Video
     public void DisplayVideoDetails()  
     {
 
-        Console.WriteLine($"Title: {_title}, Seconds: {_seconds}, Author: {_author} \n");
+        Console.WriteLine($"\nTitle: {_title}, Seconds: {_seconds}, Author: {_author} ");
         Console.WriteLine($"{_commentCount} Comments:");
        
         foreach(Comment comment in _comments)
         {
-            Console.WriteLine($"{comment.GetCommentName()}: {comment.GetCommentText()} ");
+            Console.WriteLine($"{comment.GetCommentName()} - {comment.GetCommentText()} ");
         }
          
                
