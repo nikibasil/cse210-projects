@@ -4,6 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        Console.WriteLine("Welcome to your Exercise App.");
+        Action action = new Action();
+        action.CreateNewActivity();
+
+        
+        
     }
 }
