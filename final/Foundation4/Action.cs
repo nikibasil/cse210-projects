@@ -5,6 +5,15 @@ public class Action
     protected string _actitivtyType;
     List<Activity> activityList = new List<Activity>();
 
+    private double GetMinutes()
+    {
+        Console.WriteLine("How many minutes of this activity did you complete?");
+        double _activityLength = double.Parse(Console.ReadLine());
+        return _activityLength;
+    }
+
+    
+
     public void CreateNewActivity()
     {
         int pick = 0;
@@ -18,12 +27,13 @@ public class Action
             Console.WriteLine("4. Exit");
             pick = int.Parse(Console.ReadLine());
             
-            Console.WriteLine("How many minutes of this activity did you complete?");
-            double _activityLength = double.Parse(Console.ReadLine());
+           double _activityLength;
+            
             
 
             if (pick == 1)
             {
+                _activityLength = GetMinutes();
                 Console.WriteLine("How many miles did you run?");
                 double _distance = double.Parse(Console.ReadLine());
                 _actitivtyType = "Running";
@@ -33,6 +43,8 @@ public class Action
             }
             else if (pick == 2)
             {
+                
+                _activityLength = GetMinutes();
                 Console.WriteLine("What was your cycling speed in miles per hour?");
                 double _speed = double.Parse(Console.ReadLine());
                 _actitivtyType = "Biking";
@@ -42,6 +54,7 @@ public class Action
             }
             else if (pick == 3)
             {
+                _activityLength = GetMinutes();
                 _actitivtyType = "Swimming";
                 Console.WriteLine("How many laps did you complete?");
                 int _swimmingLaps = int.Parse(Console.ReadLine());

@@ -11,7 +11,7 @@ public class Biking : Activity
 
     public override double GetDistance()
     {
-        _distance = _speed * _activityLength;
+        _distance = _speed /60 * _activityLength;
         return _distance;
     }
 
