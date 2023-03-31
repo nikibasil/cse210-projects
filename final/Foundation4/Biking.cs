@@ -24,7 +24,7 @@ public class Biking : Activity
 
     public override string GetSummary()
     {
-        return($"{_activityDate} {_activityType}-({_activityLength}min)- Distance {GetDistance()} miles, Speed {_speed} mph, Pace: {GetPace()} min per mile");
+        return($"{_activityDate} {_activityType} ({_activityLength}min) - Distance {GetDistance()} miles, Speed {_speed} mph, Pace: {GetPace()} min per mile\n");
     }
 
 }

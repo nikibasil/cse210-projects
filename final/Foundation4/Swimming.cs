@@ -30,7 +30,7 @@ public class Swimming : Activity
 
     public override string GetSummary()
     {
-        return($"{_activityDate} {_activityType}-({_activityLength}min)- Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile");
+        return($"{_activityDate} {_activityType} ({_activityLength}min) - Distance {GetDistance()} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile");
     }
     
 

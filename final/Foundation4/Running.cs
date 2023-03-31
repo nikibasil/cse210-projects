@@ -19,7 +19,7 @@ public class Running : Activity
 
     public override string GetSummary()
     {
-        return($"{_activityDate} {_activityType}-({_activityLength}min)- Distance {_distance} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile  ");
+        return($"{_activityDate} {_activityType} ({_activityLength}min) - Distance {_distance} miles, Speed {GetSpeed()} mph, Pace: {GetPace()} min per mile\n  ");
 
     }
 }
